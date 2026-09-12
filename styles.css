@@ -1,0 +1,1303 @@
+/* =========================================================
+   AI-cursus website — basis-stylesheet
+   Plat CSS, geen build-tooling. Gedeeld door alle pagina's.
+
+   Uitstraling: licht en overzichtelijk als basis (veel wit),
+   met een duidelijke AI-sfeer erin verwerkt — koel blauw-
+   paars accent, een zachte gloed en fijn puntenraster in de
+   hero, verlooptekst op de titel, en één donkere sectie voor
+   contrast. Rustig gehouden: de sfeer ondersteunt, overheerst
+   niet.
+   ========================================================= */
+
+:root {
+  /* Achtergronden — koel, licht, met wit als hoofdvlak */
+  --bg:            #f5f6fb;
+  --bg-alt:        #eceef7;
+  --surface:       #ffffff;
+  --surface-hover: #fbfbfe;
+  --ink:           #0e1020;   /* donkere sectie */
+
+  /* Randen */
+  --border:        rgba(20, 22, 42, 0.12);
+  --border-strong: rgba(20, 22, 42, 0.22);
+
+  /* Tekst */
+  --text:      #1a1c28;
+  --text-soft: #55586b;
+  --text-dim:  #838699;
+  --on-ink:      #f4f5fb;
+  --on-ink-soft: rgba(244, 245, 251, 0.70);
+
+  /* Accent — blauw-paars, de AI-kleur; spaarzaam maar zichtbaar */
+  --accent:       #4f46e5;
+  --accent-2:     #7c3aed;
+  --accent-hover: #4338ca;
+  --accent-ink:   #4137c0;   /* accenttekst op lichte vlakken */
+  --accent-soft:  rgba(79, 70, 229, 0.11);
+
+  --shadow-sm: 0 1px 2px rgba(20, 22, 42, 0.05);
+  --shadow-md: 0 8px 30px rgba(37, 33, 120, 0.12);
+
+  --max-width:        1120px;
+  --max-width-narrow: 720px;
+  --radius:    16px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               Helvetica, Arial, system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: -0.022em;
+  color: var(--text);
+}
+
+p {
+  margin: 0 0 1.15em;
+}
+
+a {
+  color: var(--accent-ink);
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+/* ---------- Layout ---------- */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.container--narrow {
+  max-width: var(--max-width-narrow);
+}
+
+section {
+  padding: 104px 0;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.6vw, 2.5rem);
+  margin: 0 0 1.2em;
+}
+
+/* Aanhef als accent-chip */
+.eyebrow,
+.hero__eyebrow,
+.module-card__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 13px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.hero__eyebrow::before,
+.module-card__tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+.module-card__tag--free {
+  background: rgba(20, 22, 42, 0.06);
+  color: var(--text-soft);
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(245, 246, 251, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.12rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+/* Losse "Home"-knop direct naast het logo, links in de header */
+.home-button {
+  margin-right: auto;
+  padding: 6px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--bg-alt);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.home-button:hover {
+  color: var(--text);
+  border-color: var(--text-dim);
+}
+
+.site-nav {
+  display: flex;
+  gap: 28px;
+  font-size: 0.92rem;
+}
+
+.site-nav a {
+  color: var(--text-soft);
+  transition: color 0.15s ease;
+}
+
+.site-nav a:hover {
+  color: var(--text);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 132px 0 120px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Zachte blauw-paarse gloed rechtsboven */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -280px;
+  right: -160px;
+  width: 720px;
+  height: 720px;
+  background: radial-gradient(circle at center,
+    rgba(124, 58, 237, 0.20),
+    rgba(79, 70, 229, 0.10) 45%,
+    transparent 72%);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+/* Fijn puntenraster, vervaagt naar onderen — subtiele AI-textuur */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(79, 70, 229, 0.14) 1px, transparent 1.4px);
+  background-size: 30px 30px;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.55), transparent 70%);
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.55), transparent 70%);
+  pointer-events: none;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin: 22px 0 24px;
+  max-width: 16ch;
+  color: var(--text);
+}
+
+/* Verlooptekst op de titel — donker naar accent, blijft leesbaar op wit.
+   Achter @supports zodat de titel nooit onzichtbaar wordt in oudere browsers. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero__title {
+    background: linear-gradient(102deg, #23243a 0%, var(--accent) 62%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.hero__lead {
+  font-size: 1.24rem;
+  line-height: 1.58;
+  color: var(--text-soft);
+  max-width: 50ch;
+  margin-bottom: 36px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Hero: tekst links, zelfgemaakte SVG-illustratie rechts */
+.hero__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.hero__content {
+  max-width: 620px;
+}
+
+.hero__illustration {
+  flex: none;
+  width: clamp(220px, 30vw, 340px);
+  height: auto;
+}
+
+.hero__illustration circle,
+.hero__illustration path {
+  fill: var(--accent);
+}
+
+@media (max-width: 860px) {
+  .hero__illustration {
+    display: none;
+  }
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  text-align: center;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: filter 0.16s ease, background-color 0.16s ease,
+              border-color 0.16s ease, color 0.16s ease,
+              transform 0.06s ease, box-shadow 0.16s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--accent), #6d3ff0);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover {
+  filter: brightness(1.06);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.btn--secondary:hover {
+  background: var(--surface);
+  border-color: var(--text);
+}
+
+.btn--block {
+  display: flex;
+  width: 100%;
+  margin-top: auto;
+}
+
+.btn--sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+/* ---------- Story ("Waarom deze cursus") ---------- */
+
+.story {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding-top: 112px;
+  padding-bottom: 112px;
+}
+
+.story .section-title {
+  position: relative;
+  padding-top: 28px;
+}
+
+.story .section-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.story p {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: var(--text-soft);
+}
+
+.story p + p {
+  margin-top: 1.35em;
+}
+
+/* ---------- Modules ---------- */
+
+.modules {
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+}
+
+.module-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.module-card:hover {
+  border-color: rgba(79, 70, 229, 0.45);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.module-card__tag {
+  margin: 0 0 20px;
+}
+
+/* Klein zelfgemaakt SVG-icoon boven de kaarttitel */
+.module-card__icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  stroke: var(--accent);
+}
+
+.module-card__icon [stroke="none"] {
+  fill: var(--accent);
+}
+
+.module-card__title {
+  font-size: 1.45rem;
+  margin: 0 0 14px;
+}
+
+.module-card__body {
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 30px;
+}
+
+/* ---------- CTA-band — de donkere sectie met AI-gloed ---------- */
+
+.cta-band {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+  padding: 112px 0;
+}
+
+.cta-band::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  width: 760px;
+  height: 620px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at center,
+    rgba(124, 58, 237, 0.30),
+    rgba(79, 70, 229, 0.12) 45%,
+    transparent 72%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.cta-band__inner {
+  text-align: center;
+}
+
+.cta-band__title {
+  color: var(--on-ink);
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin: 0 0 16px;
+}
+
+.cta-band__text {
+  color: var(--on-ink-soft);
+  font-size: 1.1rem;
+  max-width: 46ch;
+  margin: 0 auto 32px;
+}
+
+/* ---------- Footer (4 kolommen) ---------- */
+
+.site-footer {
+  background: var(--ink);
+  color: var(--on-ink-soft);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 64px 0 32px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.site-footer__cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.site-footer__col p {
+  margin: 0 0 12px;
+}
+
+.site-footer__col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer__col li {
+  margin-bottom: 10px;
+}
+
+.site-footer__brand {
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  color: var(--on-ink);
+}
+
+.site-footer__heading {
+  margin: 0 0 16px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--on-ink);
+}
+
+.site-footer a {
+  color: var(--on-ink-soft);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.site-footer a:hover {
+  color: var(--on-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Duidelijk herkenbare invulplekken voor de bedrijfsgegevens */
+.site-footer__todo {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px dashed rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.9rem;
+  line-height: 1.9;
+}
+
+.site-footer__copy {
+  margin: 48px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 860px) {
+  .site-footer__cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-footer__cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Lessenlijst (module 1) ---------- */
+
+.lessons {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.lesson-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lesson {
+  display: flex;
+  gap: 24px;
+  padding: 28px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.lesson__num {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.lesson__title {
+  font-size: 1.2rem;
+  margin: 4px 0 8px;
+}
+
+.lesson__text {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ---------- Opt-in formulier (module 1) ---------- */
+
+.optin {
+  background: var(--bg-alt);
+}
+
+.optin__card {
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 40px;
+}
+
+.optin__title {
+  font-size: 1.5rem;
+  margin: 0 0 8px;
+}
+
+.optin__lead {
+  margin: 0 0 28px;
+  color: var(--text-soft);
+  font-size: 1.02rem;
+}
+
+.form-field {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 7px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 13px 15px;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input::placeholder {
+  color: var(--text-dim);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.optin .btn {
+  width: 100%;
+  margin-top: 6px;
+}
+
+.form-note {
+  margin: 14px 0 0;
+  font-size: 0.84rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.form-success {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.form-success__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.form-success__title {
+  font-size: 1.3rem;
+  margin: 0 0 8px;
+}
+
+.form-success__text {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.form-success__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+/* ---------- Lespagina ---------- */
+
+.article {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.prose > * + * {
+  margin-top: 1.15em;
+}
+
+.prose h2 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin: 2em 0 0.1em;
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose p,
+.prose li {
+  color: var(--text-soft);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.prose strong {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.prose ol,
+.prose ul {
+  padding-left: 1.35em;
+  margin: 0;
+}
+
+.prose li + li {
+  margin-top: 0.55em;
+}
+
+.prose a {
+  font-weight: 600;
+}
+
+/* Toelichtende zin onder een sectiekop op concept-/scaffold-pagina's */
+.scaffold-note {
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+/* Accentkader — voor "Waarom dit ertoe doet" en de afsluiter */
+.callout {
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 22px 26px;
+}
+
+.callout > :first-child { margin-top: 0; }
+.callout > :last-child { margin-bottom: 0; }
+
+.callout__label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-ink);
+  margin-bottom: 8px;
+}
+
+/* Geciteerde prompt / voorbeeldtekst */
+.quote {
+  margin: 0;
+  padding: 15px 20px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+/* Meerregelig bericht: regelafbrekingen en witregels behouden, wel afbreken */
+.quote--message {
+  white-space: pre-wrap;
+}
+
+/* Inklapbaar voorbeeldbericht bij een opdracht */
+.example-msg {
+  margin-top: 12px;
+}
+
+/* Citaat met kopieerknop */
+.quote-wrap {
+  position: relative;
+}
+
+.quote-wrap .quote {
+  padding-top: 46px;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text-soft);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.copy-btn:hover {
+  color: var(--text);
+  border-color: var(--text-dim);
+}
+
+.copy-btn:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.copy-btn svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+}
+
+.copy-btn.is-copied {
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* Opdrachtblok */
+.task {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+}
+
+.task > :first-child { margin-top: 0; }
+.task > :last-child { margin-bottom: 0; }
+
+.task__label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+/* ---------- Kennisvraag (meerkeuze met directe feedback) ---------- */
+
+.knowledge-check {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+}
+
+.knowledge-check .knowledge-check__q {
+  margin: 0 0 18px;
+  font-size: 1.05rem;
+  font-weight: 650;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.knowledge-check__options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.knowledge-check__option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 13px 16px;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--surface);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.knowledge-check__option:hover:not(:disabled) {
+  border-color: var(--text-dim);
+}
+
+.knowledge-check__option:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.knowledge-check__option:disabled {
+  cursor: default;
+}
+
+.knowledge-check__option.is-correct {
+  border-color: #1f7a4d;
+  background: rgba(31, 122, 77, 0.10);
+  color: #14532d;
+}
+
+.knowledge-check__option.is-wrong {
+  border-color: #c2410c;
+  background: rgba(194, 65, 12, 0.08);
+  color: #7c2d12;
+}
+
+.knowledge-check .knowledge-check__feedback {
+  margin: 16px 0 0;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.knowledge-check .knowledge-check__feedback.is-correct {
+  background: rgba(31, 122, 77, 0.10);
+  color: #14532d;
+}
+
+.knowledge-check .knowledge-check__feedback.is-wrong {
+  background: rgba(194, 65, 12, 0.08);
+  color: #7c2d12;
+}
+
+/* Navigatie vorige/volgende les onderaan */
+.lesson-nav {
+  padding: 72px 0;
+}
+
+.lesson-nav__row {
+  display: flex;
+  gap: 16px;
+}
+
+.lesson-prev,
+.lesson-next {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 26px 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.lesson-next {
+  justify-content: space-between;
+}
+
+/* Secundair: minder kleurnadruk dan de "volgende"-knop */
+.lesson-prev {
+  justify-content: flex-start;
+  background: var(--bg-alt);
+}
+
+.lesson-prev:hover,
+.lesson-next:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.lesson-next:hover {
+  border-color: var(--accent);
+}
+
+.lesson-prev:hover {
+  border-color: var(--text-dim);
+}
+
+.lesson-prev__meta,
+.lesson-next__meta {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.lesson-prev__title,
+.lesson-next__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.lesson-prev__title {
+  color: var(--text-soft);
+  font-weight: 650;
+}
+
+.lesson-prev__arrow,
+.lesson-next__arrow {
+  flex: none;
+  font-size: 1.5rem;
+}
+
+.lesson-next__arrow {
+  color: var(--accent-ink);
+}
+
+.lesson-prev__arrow {
+  color: var(--text-dim);
+}
+
+/* Broodkruimelpad bovenaan een lespagina: "Home › Module › Les X van Y" */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.breadcrumb a {
+  color: var(--text-dim);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--text-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.breadcrumb__sep {
+  color: var(--text-dim);
+}
+
+.breadcrumb__current {
+  color: var(--text-soft);
+}
+
+/* ---------- Verkooppagina module 2 ---------- */
+
+.offer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.offer-list li {
+  position: relative;
+  padding-left: 34px;
+  color: var(--text-soft);
+  font-size: 1.06rem;
+  line-height: 1.6;
+}
+
+.offer-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.price-card {
+  max-width: 460px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 40px;
+}
+
+.price-card__amount {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.price-card__note {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin: 0 0 26px;
+}
+
+.price-card .btn {
+  width: 100%;
+}
+
+.price-card__sub {
+  margin: 16px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+/* ====================================================================
+   TIJDELIJKE TESTLINK — VERWIJDEREN VÓÓR LANCERING
+   Hoort bij het ".test-shortcut"-blok in module-1.html.
+   Bewust afwijkend gestyled (gestippelde rand, waarschuwingskleur,
+   TEST-label) zodat het makkelijk te herkennen en te verwijderen is.
+   ==================================================================== */
+
+.test-shortcut {
+  padding: 40px 0 64px;
+  background: var(--bg-alt);
+}
+
+.test-shortcut__inner {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  border: 2px dashed #c2410c;
+  border-radius: var(--radius);
+  background: #fff7ed;
+}
+
+.test-shortcut__badge {
+  flex: none;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: #c2410c;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.test-shortcut__link {
+  font-weight: 700;
+  color: #9a3412;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.test-shortcut__link:hover {
+  color: #7c2d12;
+}
+
+/* ============ EINDE TIJDELIJKE TESTLINK ============ */
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+  }
+
+  .site-nav {
+    gap: 16px;
+    font-size: 0.85rem;
+  }
+
+  section {
+    padding: 76px 0;
+  }
+
+  .hero {
+    padding: 96px 0 82px;
+  }
+
+  .story,
+  .cta-band {
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }
+
+  .module-card {
+    padding: 28px;
+  }
+
+  .lesson {
+    gap: 18px;
+    padding: 22px;
+  }
+
+  .optin__card,
+  .price-card {
+    padding: 28px;
+  }
+
+  .task {
+    padding: 22px;
+  }
+
+  .lesson-nav__row {
+    flex-direction: column;
+  }
+
+  .lesson-prev,
+  .lesson-next {
+    padding: 22px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+}
