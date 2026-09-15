@@ -921,6 +921,21 @@ section {
   margin-bottom: 10px;
 }
 
+/* Kopieerbaar prompt-/checklist-sjabloon bij een les */
+.prompt-box {
+  margin-top: 20px;
+}
+
+.prompt-box__label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
 /* ---------- Kennisvraag (meerkeuze met directe feedback) ---------- */
 
 .knowledge-check {

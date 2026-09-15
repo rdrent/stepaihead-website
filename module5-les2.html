@@ -77,6 +77,25 @@
           </p>
         </div>
 
+        <div class="prompt-box">
+          <span class="prompt-box__label">Prompt-sjabloon</span>
+          <div class="quote-wrap">
+            <button type="button" class="copy-btn" data-copy-target="#prompt-template">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span class="copy-btn__label" aria-live="polite">Kopieer</span>
+            </button>
+            <blockquote class="quote quote--message" id="prompt-template">Geef je antwoord in de vorm van [een tabel met kolommen: ... / een
+genummerde lijst / een stappenplan].
+
+Onderwerp: [...]
+
+Als het format niet precies goed is, geef ik aan wat je moet aanpassen.</blockquote>
+          </div>
+        </div>
+
         <div class="callout">
           <span class="callout__label">Afsluiting</span>
           <p>
@@ -149,6 +168,7 @@
     </div>
   </footer>
 
+  <script src="copy.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
