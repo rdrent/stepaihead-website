@@ -1,0 +1,36 @@
+PROMPT-SJABLONEN — AI met bestanden & data
+StepAIhead · Module 6 · Kies je verdieping
+
+============================================================
+LES 1 — De basis: hoe je AI eigen bestanden laat gebruiken
+============================================================
+
+Ik geef je een bestand: [type bestand, bv. "een verslag" of "een lijst met cijfers"].
+
+Vraag: [heel precies, bv. "vat samen in 5 bullets" / "welke rijen voldoen aan [voorwaarde]"]
+
+Als iets niet duidelijk is uit het bestand, geef dat aan in plaats van te gokken.
+
+============================================================
+LES 2 — In de praktijk: meerdere bestanden combineren en vergelijken
+============================================================
+
+Ik geef je [aantal] bestanden:
+1. [bestand 1 + wat het is]
+2. [bestand 2 + wat het is]
+
+Doel: [vergelijken / combineren tot overzicht / trends eruit halen]
+Geef je antwoord als: [tabel met kolommen: ... / top-3 / korte samenvatting]
+
+Benoem expliciet wat ontbreekt of tegenstrijdig is tussen de bestanden.
+
+============================================================
+LES 3 — Verdieping: cijfers kritisch controleren en je eigen sjabloon opslaan
+============================================================
+
+Ik geef je [bestand met cijfers/data].
+
+[Je specifieke vraag]
+
+Laat expliciet zien welke gegevens/rijen je hebt gebruikt om tot je antwoord te
+komen, zodat ik het kan controleren. Geef ook aan waar je minder zeker van bent.

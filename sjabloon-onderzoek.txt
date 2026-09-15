@@ -1,0 +1,32 @@
+PROMPT-SJABLONEN — AI voor onderzoek & research
+StepAIhead · Module 6 · Kies je verdieping
+
+============================================================
+LES 1 — De basis: breed beginnen, dan pas de diepte in
+============================================================
+
+Ik wil meer weten over: [onderwerp].
+
+Stel eerst 5 deelvragen voor die relevant zijn. Werk er daarna [aantal] uit op
+mijn verzoek. Geef expliciet aan waar je minder zeker van bent of waar ik
+zelf een bron zou moeten checken.
+
+============================================================
+LES 2 — In de praktijk: grote hoeveelheden informatie structureren
+============================================================
+
+Hier is mijn ongestructureerde informatie over [onderwerp]:
+[plak aantekeningen/artikelen]
+
+Structureer dit tot: (1) belangrijkste bevindingen, (2) openstaande vragen of
+tegenstrijdigheden, (3) wat ik zelf nog zou moeten controleren bij een bron.
+
+============================================================
+LES 3 — Verdieping: bronnen kritisch wegen en je eigen onderzoeksjabloon opslaan
+============================================================
+
+Onderwerp: [...]
+
+Doorloop dit in 3 stappen: (1) stel eerst deelvragen voor, (2) werk de
+belangrijkste uit, (3) geef aan welke onderdelen stevig onderbouwd zijn en
+welke ik zelf bij een bron zou moeten checken.

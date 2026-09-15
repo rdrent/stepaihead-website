@@ -1,0 +1,31 @@
+PROMPT-SJABLONEN — AI voor marketing & content
+StepAIhead · Module 6 · Kies je verdieping
+
+============================================================
+LES 1 — De basis: een consistente stijl neerzetten
+============================================================
+
+Hier zijn [aantal] voorbeelden van content die ik goed vond:
+[plak voorbeelden of omschrijf de stijl]
+
+Stel op basis hiervan een korte stijlbeschrijving op: toon, doelgroep, wat
+wel/niet, typische woorden. Ik gebruik dit steeds opnieuw als basis.
+
+============================================================
+LES 2 — In de praktijk: meerdere varianten maken en kiezen
+============================================================
+
+Stijl: [jouw stijlbeschrijving uit les 1]
+
+Schrijf [type content] over: [onderwerp]. Geef 3 duidelijk verschillende
+varianten (bv. andere invalshoek of opening per variant) zodat ik kan kiezen.
+
+============================================================
+LES 3 — Verdieping: een contentsysteem bouwen en je eigen bibliotheek opslaan
+============================================================
+
+Stijl: [jouw stijlbeschrijving]
+Vast format: [bv. "wekelijkse tip", "productupdate", "klantverhaal"]
+
+Schrijf de volgende editie over: [onderwerp/thema]. Houd de structuur gelijk
+aan eerdere edities van dit format.

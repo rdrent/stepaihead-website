@@ -1,0 +1,31 @@
+PROMPT-SJABLONEN — AI voor planning & organisatie
+StepAIhead · Module 6 · Kies je verdieping
+
+============================================================
+LES 1 — De basis: AI als denkpartner bij prioriteren
+============================================================
+
+Dit is mijn huidige takenlijst / drukke periode: [plak of omschrijf].
+
+Stel een prioriteitsvolgorde voor op basis van: deadline, belang, en tijd die
+het kost. Geef bij elke taak een korte onderbouwing waarom die zo hoog of
+laag staat.
+
+============================================================
+LES 2 — In de praktijk: grote, vage taken opsplitsen
+============================================================
+
+Dit is een taak die ik voor me uitschuif omdat die groot/vaag voelt: [omschrijf].
+
+Splits deze op in concrete stappen, in logische volgorde. Geef bij de eerste
+stap een heel kleine, makkelijke start-actie.
+
+============================================================
+LES 3 — Verdieping: een eigen weekritme en sjabloon opslaan
+============================================================
+
+Dit is mijn vaste wekelijkse planningsmoment. Mijn taken deze week: [lijst].
+
+Geef: (1) prioriteitsvolgorde met korte onderbouwing, (2) een inschatting
+hoeveel tijd elke taak kost, (3) wat waarschijnlijk moet wachten tot volgende
+week.

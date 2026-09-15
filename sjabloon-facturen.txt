@@ -1,0 +1,32 @@
+PROMPT-SJABLONEN — AI voor facturen & administratieve documenten
+StepAIhead · Module 6 · Kies je verdieping
+
+============================================================
+LES 1 — De basis: vaste structuur, AI is geen rekenmachine
+============================================================
+
+Stel een [offerte / factuurtoelichting / betalingsherinnering] op met de
+volgende punten: [losse punten/gegevens].
+
+Toon: zakelijk en duidelijk. Vaste onderdelen die erin moeten: [opsomming].
+
+Let op: ik controleer alle bedragen en verplichte gegevens zelf na.
+
+============================================================
+LES 2 — In de praktijk: lastige situaties afhandelen
+============================================================
+
+Situatie: [omschrijf de lastige situatie, bv. late betaling / gecorrigeerde factuur]
+
+Stel een tekst op met deze toon: [zakelijk maar vriendelijk / kort en duidelijk].
+Geef een duidelijke vervolgstap voor de ontvanger. Geef 2 varianten qua toon.
+
+============================================================
+LES 3 — Verdieping: een documentbibliotheek opbouwen en opslaan
+============================================================
+
+Ik wil een vaste checklist bij mijn [offerte/factuur/herinnering]-sjabloon:
+welke gegevens en bedragen moet ik altijd zelf controleren voordat ik het
+verstuur?
+
+Geef een korte, concrete checklist specifiek voor dit type document.

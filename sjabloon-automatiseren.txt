@@ -1,0 +1,33 @@
+PROMPT-SJABLONEN — AI en automatiseren van terugkerend werk
+StepAIhead · Module 6 · Kies je verdieping
+
+============================================================
+LES 1 — De basis: patronen herkennen die zich lenen voor automatiseren
+============================================================
+
+Dit is een taak die ik regelmatig doe: [omschrijf de taak].
+
+Bouw hier een vast sjabloon voor met duidelijke invulplekken tussen [haakjes],
+zodat ik het steeds letterlijk kan hergebruiken. Geef ook aan welke onderdelen
+altijd hetzelfde blijven en welke per keer verschillen.
+
+============================================================
+LES 2 — In de praktijk: een workflow van meerdere stappen bouwen
+============================================================
+
+Dit is mijn workflow in stappen:
+Stap 1: [wat AI hier moet doen]
+Stap 2: [wat AI hier moet doen, gebruikmakend van de uitkomst van stap 1]
+
+Voer de stappen na elkaar uit en laat na elke stap kort zien wat de
+tussenuitkomst is.
+
+============================================================
+LES 3 — Verdieping: grenzen van automatiseren en je eigen bibliotheek opslaan
+============================================================
+
+Ik heb de volgende terugkerende taken: [som ze op].
+
+Help me inschatten welke het meest waard zijn om een vast sjabloon voor te
+bouwen, op basis van hoe vaak ik de taak doe en hoe herhaalbaar de vorm is.
+Geef een prioriteitsvolgorde.
